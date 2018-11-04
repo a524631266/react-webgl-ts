@@ -15,3 +15,10 @@ npm install -D enzyme @types/enzyme react-addons-test-utils
 ```
     npm install -S redux react-redux @types/react-redux
 ```
+
+
+# 使用方法
+```
+$ npm start 
+```
+通过 localhost:3000访问页面
