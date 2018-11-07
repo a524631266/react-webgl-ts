@@ -72,11 +72,12 @@ export default class BaseRender extends Arender{
      * @param gl webgl上下文
      */
     public clearBackgroud(gl:WebGLRenderingContext):void{
-        gl.clearColor(0.3,0.4,0.5,0.5)
+        gl.clearColor(0.3,0.4,0.5,0.8)
         gl.clear(gl.COLOR_BUFFER_BIT)
     }
     /**
-     * 初始化一个项目，用来管理两个着色器，并链接
+     * 初始化一个项目，用来管理两个着色器
+     * 同时默认清空背景
      * @param gl webgl上下文
      * @param program webgl上下文
      */
@@ -102,7 +103,7 @@ export default class BaseRender extends Arender{
         const byteN:number = new Float32Array(data).BYTES_PER_ELEMENT;
         const attributenames = Object.keys(attributes)
         console.log("buteN",byteN,"attribunames:",attributenames);
-        attributenames.forEach(
+        attributenames.forEach(// 对每个
             name=>{
                 const aposition = gl.getAttribLocation(program,name);
                 const [size,normalize,stridenum,offsetnum] = attributes[name]
@@ -111,7 +112,7 @@ export default class BaseRender extends Arender{
             }
         )
         if(uniforms){
-            const uniformnames = Object.keys(attributes)
+            const uniformnames = Object.keys(uniforms)
             uniformnames.forEach(
                 (name,index)=>{
                     const ucolor = gl.getUniform(program,name);

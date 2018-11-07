@@ -4,6 +4,7 @@ import * as ReactDOM from 'react-dom';
 // import {Hello} from './components/Hello';
 import { Provider } from 'react-redux';
 import WebglComponent from "./components/WebglComponent";
+import CanvasText from "./components/CanvasText";
 import { Hello } from "./containers/Hello";
 import './index.css';
 import registerServiceWorker from './registerServiceWorker';
@@ -18,6 +19,7 @@ ReactDOM.render(
     <Provider store={store2}>
         <WebglComponent  />
     </Provider>
+    <CanvasText />
     </div>
     ,
   document.getElementById('root') as HTMLElement
